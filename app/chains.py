@@ -10,7 +10,7 @@ import streamlit as st
 GROQ_API_KEY = st.secrets["default"]["GROQ_API_KEY"]
 
 # using this we can have a file called .env in your root folder where you can keep your API key. 
-load_dotenv()   # This will find the .env file and it will set the things in that file as your environment variable
+# load_dotenv()   # This will find the .env file and it will set the things in that file as your environment variable
 
 # print(os.getenv("GROQ_API_KEY"))        # just for testing
 
