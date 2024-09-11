@@ -5,7 +5,9 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.exceptions import OutputParserException
 from dotenv import load_dotenv
 
+import streamlit as st
 
+GROQ_API_KEY = st.secrets["default"]["GROQ_API_KEY"]
 
 # using this we can have a file called .env in your root folder where you can keep your API key. 
 load_dotenv()   # This will find the .env file and it will set the things in that file as your environment variable
@@ -14,7 +16,9 @@ load_dotenv()   # This will find the .env file and it will set the things in tha
 
 class Chain:
     def __init__(self):
-        self.llm = ChatGroq(temperature=0, groq_api_key=os.getenv("GROQ_API_KEY"), model_name="llama-3.1-70b-versatile")
+        self.llm = ChatGroq(temperature=0, groq_api_key=GROQ_API_KEY, model_name="llama-3.1-70b-versatile")
+        # self.llm = ChatGroq(temperature=0, groq_api_key=os.getenv("GROQ_API_KEY"), model_name="llama-3.1-70b-versatile")
+        
 
     # function for extracting the job description and then passing it to a json parser to convert it to json
     def extract_jobs(self, cleaned_text):
