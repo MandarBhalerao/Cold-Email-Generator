@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://spine-crook:$HF_TOKEN@huggingface.co/spaces/spine-crook/cold-email-generator main
+        run: git push --force https://spine-crook:$HF_TOKEN@huggingface.co/spaces/spine-crook/cold-email-generator main
